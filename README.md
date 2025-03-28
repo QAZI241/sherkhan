@@ -1,1 +1,210 @@
-# sherkhan
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBlogger</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: yellow;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav a {
+            color: yellow;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: orange;
+        }
+        .toggle-container {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+        }
+        .toggle-button {
+            padding: 10px;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .toggle-button:hover {
+            background-color: orange;
+        }
+        h1 {
+            margin-top: 80px;
+            color: yellow;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid yellow;
+            width: fit-content;
+            animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .image-container img {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.7);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: orange;
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 10px;
+            padding: 20px;
+            max-width: 90%;
+            margin: auto;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .contact-form {
+            background: rgba(255, 255, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Qazi Sherkhan, a passionate web developer and content creator. I love coding, photography, and sharing my experiences with the world.</p>
+    <p>Follow me on my social media for more updates!</p>
+</section>
+
+    <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    </div>
+
+    <h1 id="home">Welcome to My Webpage</h1>
+    <p>Here is my image, and below are the buttons.</p>
+
+    <div class="image-container">
+        <img src="QAZI.png" alt="QAZI">
+    </div>
+
+    <div class="button-container">
+        <a href="https://www.tiktok.com/@qazi__23456" class="button">Follow</a>
+        <a href="https://www.instagram.com/qazi_sherkhan/" class="button">About me</a>
+    </div>
+
+    <section id="gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <img src="sher1.jpg" alt="Gallery Image 1">
+            <img src="sher2.jpg" alt="Gallery Image 2">
+            <img src="sher3.jpg" alt="Gallery Image 3">
+            <img src="sher4.jpg" alt="Gallery Image 4">
+            <img src="sher5.jpg" alt="Gallery Image 5">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+   <footer>
+        <p>&copy; 2025 My Webpage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
